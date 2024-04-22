@@ -353,7 +353,7 @@ div.navbar-header:after {
     position: relative;
     padding: 0px;
     box-shadow: 0px 0px 1px rgba(0,0,0,0.4);
-    background: url("../images/banner-bg.jpg") no-repeat;
+    background: url("https://media.istockphoto.com/id/1087673356/photo/highway-at-sunrise-going-into-death-valley-national-park.jpg?s=1024x1024&w=is&k=20&c=djFLS8h7JpVqpY4MLtnHInoKygtftaUcwR03prsKuss=") no-repeat;
     background-size: cover !important;
     height: 650px;
 	/* background-size: cover; */
