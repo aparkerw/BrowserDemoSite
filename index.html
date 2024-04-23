@@ -45,9 +45,33 @@ Licence: Creative Commons Attribution 3.0** - http://creativecommons.org/license
     <link rel="stylesheet" href="css/styles.css" />
     <!-- Font Awesome -->
     <link href="font/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        let getDeals = async () => {
+            // let resp = await $.get('http://localhost:8080');
+            // console.log('aaa', JSON.stringify(resp, null,2));
+            // alert(resp);
+            // document.getElementById('SpecialDeals').innerHTML = 'SURE THING DUDE';
+
+
+            $.get("http://time.jsontest.com/", function(data, status){
+                // console.log(data);
+                document.getElementById('SpecialDeals').innerHTML = `Loaded New Deals for ${data.date} - ${data.time}`;
+            });
+
+            $.get("http://localhost:8081/weather", function(data, status){
+                console.log(data);
+            });
+            
+            // java backend has CORS issue
+            $.get("http://localhost:8080", function(data, status){
+                // alert("Data: " + data + "\nStatus: " + status);
+            });
+
+        }
+    </script>
 </head>
 
-<body>
+<body onload="getDeals()">
     <header class="header">
         <div class="container">
             <nav class="navbar navbar-inverse" role="navigation">
@@ -81,6 +105,7 @@ Licence: Creative Commons Attribution 3.0** - http://creativecommons.org/license
     <div id="#top"></div>
     <section id="home">
         <div class="banner-container">
+            <div id="SpecialDeals" style="padding:5px; color: #EEFFEE; font-weight: bold; width: 100%; text-align: right;">loading deals ...</div>
          <!--   <img src="images/banner-bg.jpg" alt="banner" />-->
             <div class="container banner-content">
                 <div id="da-slider" class="da-slider">
